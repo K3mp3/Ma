@@ -1,0 +1,666 @@
+/*body*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*Clear fix for pictture in right column*/
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+/*First background image*/  
+.background-image {
+    background-image: url("assets/photos/adam-miller.jpg");
+    background-size: cover; 
+    background-position: center;
+    height:100vh;
+    position: relative;
+}
+
+
+/*text*/
+h1, h2, h3 { 
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #fff;
+}
+
+p {
+    margin: 0;
+}
+
+
+/*Navigation*/
+
+nav {
+    background-color: rgb(255, 255, 255);
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 2;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 0 50px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    text-shadow: 3px 2px rgba(48, 47, 47, 0.3);
+}
+
+.checkbox {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+    width: 35px;
+    height: 35px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+button { //Hamburger icon
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border: 0;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+button span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    position: relative;
+    left: 0;
+    margin-left: 6px;
+}
+
+button span:nth-child(2) {
+    margin-left: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+input:hover + .menu button span:nth-child(2) {
+    left: 6px;
+}
+
+input:checked + .menu nav {
+    visibility: visible;
+    opacity: 0.8;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/*aside*/
+
+aside {
+    max-width: 250px;
+    margin-top: 65px;
+    margin-left: 25px;
+    border: 4px solid #000;
+    background-color: rgb(255, 255, 255, 0.8);
+    position: absolute;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+.slogan {
+    text-align: center;
+    padding: 10px 30px;
+}
+
+.slogan-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 20px 10px;
+}
+
+.fa-arrow-right {
+    transition: all 0.3s ease-in-out;
+    transform: translate(2px); 
+}
+
+a:hover .fa-arrow-right {
+    transition: all 0.3s ease-in-out;
+    transform: translate(15px);
+}
+
+
+/*Arrow to next page*/
+
+.scroll-arrow {
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+}
+
+.fa-arrow-down-long {
+    font-size: 2.5rem;
+    color: white;
+    bottom: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.fa-arrow-down-long:hover {
+    transition: all 0.3s ease-in-out;
+    transform: translateY(15px);
+}
+
+
+/*main*/
+
+main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("assets/photos/space.webp");
+    background-size: cover; 
+    background-position: center;
+    font-family: 'Rubik', sans-serif;
+    color: white;
+    font-weight: 400;
+    padding: 70px 45px;
+}
+
+.background-holder { //Parent div to div class left and right
+    max-width: 550px;
+    margin: auto;
+}
+
+.heading {
+    font-size: 2rem;
+    margin: 0;
+    margin-left: 15px;
+}
+
+.main-title {
+    margin-top: 0;
+    z-index: 1;
+    text-shadow: 0px 5px 5px #000;
+    position: relative;
+}
+
+.main-span {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #a5a5a5;
+    margin-top: 0;
+    position: relative;
+    top: 30px;
+    left: -106px;
+    font-size: 4.0rem;
+}
+
+.title {
+    margin-top: 60px;
+}
+
+main p {
+    color: rgb(216, 216, 216);
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin: 15px 0;
+    line-height: 1.3rem;
+}
+
+.major-tom {
+    display: none;
+}
+
+main a {
+    color: rgb(255, 0, 140);
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+
+/*Quote*/
+
+blockquote {
+    font-weight: 300;
+    margin: 35px 45px;
+    position: relative;
+    display: block;
+    font-style: italic;
+    line-height: 1.3rem;
+
+    &::before, span::after {
+        display: block;
+        position: absolute;
+        font-size: 6rem;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        opacity: 30%;
+    }
+
+    &::before {
+        top: 18px;
+        left: -29px;
+        content: open-quote;
+    }
+
+    span::after  {
+        bottom: -35px;
+        right: -14px;
+        content: close-quote;
+    }
+
+    span {
+        position: relative;
+    }
+}
+
+
+/*footer*/
+
+footer {
+    background-color: #100431;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+    padding: 30px;
+    color: rgb(255, 0, 140);
+    text-align: center;
+}
+
+footer p{
+    text-align: left;
+}
+
+.cookie-button{
+    background-color: #2321b1;
+    color: #fff;
+    border: none;
+    padding: 6px;
+    margin-top: 20px;
+}
+
+.cookie-button:hover{
+    background-color: #3533ad;
+    cursor: pointer;
+}
+
+
+/*Media queries*/
+
+@media screen and (max-width: 550px ) {
+    aside {
+        max-width: 220px;
+        margin-top: 65px;
+        margin-left: 25px;
+        border: 4px solid #000;
+        background-color: rgb(255, 255, 255, 0.8);
+        position: absolute;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 500;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        padding: 10px 0;
+    }
+
+    .slogan {
+        text-align: center;
+        padding: 10px 30px;
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 516px ) {
+    aside {
+        max-width: 210px;
+        margin-top: 65px;
+        margin-left: 25px;
+        border: 4px solid #000;
+        background-color: rgb(255, 255, 255, 0.8);
+        position: absolute;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 500;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        padding: 10px 0;
+    }
+
+    .slogan {
+        text-align: center;
+        padding: 10px 30px;
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 442px ) {
+    aside {
+        max-width: 190px;
+        margin-top: 65px;
+        margin-left: 25px;
+        border: 4px solid #000;
+        background-color: rgb(255, 255, 255, 0.8);
+        position: absolute;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 500;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        padding: 10px 0;
+    }
+
+    .slogan {
+        text-align: center;
+        padding: 10px 30px;
+        display: flex;
+    }
+
+    .heading {
+        font-size: 1.5rem;
+        margin: 0;
+        margin-left: 15px;
+    }
+    
+    .main-title {
+        margin-top: 0;
+        z-index: 1;
+        text-shadow: 0px 5px 5px #000;
+        position: relative;
+    }
+    
+    .main-span {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        color: #a5a5a5;
+        margin-top: 0;
+        position: relative;
+        top: 30px;
+        left: -76px;
+        font-size: 3.2rem;
+    }
+}
+
+@media screen and (max-width: 397px) {
+    aside {
+        max-width: 170px;
+        margin-top: 65px;
+        margin-left: 25px;
+        border: 4px solid #000;
+        background-color: rgb(255, 255, 255, 0.8);
+        position: absolute;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 500;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        padding: 10px 0;
+    }
+
+    .slogan {
+        text-align: center;
+        padding: 10px 30px;
+        display: flex;
+    }
+
+    .heading {
+        font-size: 1.4rem;
+        margin: 0;
+        margin-left: 15px;
+    }
+    
+    .main-title {
+        margin-top: 0;
+        z-index: 1;
+        text-shadow: 0px 5px 5px #000;
+        position: relative;
+    }
+    
+    .main-span {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        color: #a5a5a5;
+        margin-top: 0;
+        position: relative;
+        top: 30px;
+        left: -76px;
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 345px) {
+    aside {
+        max-width: 150px;
+        margin-top: 65px;
+        margin-left: 25px;
+        border: 4px solid #000;
+        background-color: rgb(255, 255, 255, 0.8);
+        position: absolute;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        text-transform: uppercase;
+        padding: 10px 0;
+    }
+
+    .slogan {
+        text-align: center;
+        padding: 10px 30px;
+        display: flex;
+    }
+
+    main {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("assets/photos/space.webp");
+        background-size: cover; 
+        background-position: center;
+        font-family: 'Rubik', sans-serif;
+        color: white;
+        font-weight: 400;
+        padding: 70px 45px;
+    }
+    
+    .heading {
+        font-size: 1.2rem;
+        margin: 0;
+        margin-left: 15px;
+    }
+    
+    .main-title {
+        margin-top: 0;
+        z-index: 1;
+        text-shadow: 0px 5px 5px #000;
+        position: relative;
+    }
+    
+    .main-span {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        color: #a5a5a5;
+        margin-top: 0;
+        position: relative;
+        top: 17px;
+        left: -61px;
+        font-size: 2.2rem;
+    }
+    
+    main p {
+        color: rgb(216, 216, 216);
+        font-size: 0.9rem;
+        font-weight: 300;
+    }
+    
+    main em {
+        font-size: 1.2rem;
+        font-weight: 300;
+        margin: 30px 50px;
+    }
+    
+    main a {
+        color: rgb(255, 0, 140);
+        font-weight: 300;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 1200px){
+
+    .nav-links:hover {
+        text-decoration: underline;
+        text-decoration-color: rgb(255, 0, 140);
+        text-shadow: none;
+    }
+
+    aside {
+        max-width: 250px;
+        margin: 0;
+        margin-top: 70px;
+        border: 4px solid #000;
+        background-color: rgb(255, 255, 255, 0.5);
+        position: absolute;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 500;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        padding: 10px 0;
+        text-align: right;
+    }
+
+    .slogan-holder {
+        max-width: 1450px;
+        margin: auto;
+    }
+
+    .slogan {
+        text-align: center;
+        padding: 35px 10px;
+        display: flex;
+    }
+
+    .slogan-link {
+        text-decoration: none;
+        color: #000;
+        font-size: 0.7rem;
+        font-weight: 400;
+        margin: 20px 30px;
+    }
+
+    .background-holder {
+        max-width: 1450px;
+        margin: auto;
+        display: flex;
+    }
+
+    .heading {
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    .left-column, .right-column {
+        width: 50%;
+        padding: 50px 0px;
+    }
+
+    .left-column {
+        padding-right: 165px;
+    }
+
+    .right-column {
+        padding-left: 165px;
+    }
+
+    .desktop-quote{
+        width: 65%;
+        margin: 60px 0;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        line-height: 1.3rem;
+    }
+
+    .desktop-quote p{
+        font-size: 2rem;
+        background: -webkit-linear-gradient(#3a222f, #43474b, #3a222f);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.3rem;
+    }
+
+    .main-span {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        color: #a5a5a5;
+        margin-top: 0;
+        position: relative;
+        top: -47px;
+        left: 15px;
+        font-size: 5.5rem;
+    }
+    
+    .main-title {
+        margin-top: 0;
+        z-index: 1;
+        text-shadow: 0px 5px 5px #000;
+        position: relative;
+        display: block;
+    }
+
+    .major-tom {
+        display: block;
+        width: 110px;
+        height: auto;
+        float: right;
+        transform: rotate(3deg);
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        text-align: right;
+    }
+
+    .cookie-button {
+        background-color: #2321b1;
+        color: #fff;
+        border: none;
+        padding: 6px;
+        right: 0;
+        margin: 0;
+        
+    }
+    .cookie-text{
+        width: 50vw;
+    }
+
+    .cookie-accept{
+        width: 50vw;
+    }
+}
